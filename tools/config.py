@@ -13,7 +13,7 @@ class MysqlConfig(object):
     PASSWORD = "123456"
     HOST = "192.168.1.1"
     PORT = "3306"
-    DATABASE = "op_bmc"
+    DATABASE = "op_ansible_api"
     SQLALCHEMY_DATABASE_URI = "{}+{}://{}:{}@{}:{}/{}?charset=utf8".format(DIALECT, DRIVER, USERNAME, PASSWORD, HOST,
                                                                            PORT, DATABASE)
     SQLALCHEMY_TRACK_MODIFICATIONS = False
