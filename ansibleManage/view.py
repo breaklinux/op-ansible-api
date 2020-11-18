@@ -73,7 +73,7 @@ def ansibleRun_v2():
         if inenory_ip:
 
             t = HostApi()
-            Ansible_run = AnsibleApi(script_path + "/static_hosts", "ops", becomeUser)
+            Ansible_run = AnsibleApi(script_path + "/inventory_static_hosts", "ops", becomeUser)
             Ansible_run.run(inenory_ip, command, args)
             reults = Ansible_run.get_result_v2()
 
