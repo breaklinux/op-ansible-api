@@ -11,7 +11,7 @@ class MysqlConfig(object):
     DRIVER = "pymysql"
     USERNAME = "root"
     PASSWORD = "xiaolige@2020ABC"
-    HOST = "192.168.58.5"
+    HOST = "192.168.1.5"
     PORT = "3306"
     DATABASE = "op_ansible_api"
     SQLALCHEMY_DATABASE_URI = "{}+{}://{}:{}@{}:{}/{}?charset=utf8".format(DIALECT, DRIVER, USERNAME, PASSWORD, HOST,
