@@ -83,7 +83,7 @@ class AnsibleApi(object):
 
     def run(self, host_list, module_name, module_args, ):
         play_source = dict(
-            name="Ansible Play For Chj By Chenjl At 20190104",
+            name="Ansible Play",
             hosts=host_list,
             gather_facts='no',
             tasks=[
