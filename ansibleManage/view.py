@@ -253,8 +253,8 @@ def ansibleInsterHost():
         if host_ip and group and port and username and password:
             ip = host_ip.split(',');
             for i in ip:
-                ansibleHostDataInsert = bmc_ansible_hosts(instanceip=i, username=username, password=password, port=port,
-                                                group=group, cratetime=create_time)
+                ansibleHostDataInsert = bmc_ansible_hosts(host=i, username=username, password=password, port=port,
+                                                group=group, createtime=create_time)
                 db.session.add(ansibleHostDataInsert)
                 db.session.commit()
             msg = "Insert Success"

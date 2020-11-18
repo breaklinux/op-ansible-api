@@ -57,12 +57,12 @@ def anisbleAddUuidChannel(desc, owner, uuid_use, id=None):
     try:
         if id:
            channel.query.filter_by(id=id).update({"desc": desc, "owner": owner, "uuid_use": uuid_use})
-           msg = "Update Success"
         else:
             channelDataInsert = channel(desc=desc, owner=owner, uuid=uuid, uuid_use=uuid_use)
             db.session.add(channelDataInsert)
         data = """你申请{},认证ID: {}""".format(uuid_use, uuid)
         db.session.commit()
+        msg = "Update Success"
         return {"code": 0, "data": data, "message": msg}
     except Exception as e:
         print(e)
