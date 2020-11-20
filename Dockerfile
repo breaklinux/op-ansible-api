@@ -10,7 +10,7 @@ RUN pip install -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
 
 #引入ansible centos
 FROM centos:7.6.1810
-RUN  yum makecache && yum  -y install ansible python36 mysql-devel mysql  python36-devel python36-pip python36-setuptools 
+RUN  yum makecache && yum  -y install epel-release ansible python36 mysql-devel mysql  python36-devel python36-pip python36-setuptools 
 
 
 
