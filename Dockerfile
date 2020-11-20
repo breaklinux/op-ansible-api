@@ -27,6 +27,7 @@ EXPOSE 5000
 
 #ansible master私有密钥文件
 COPY SSHKey/id_rsa /root/.ssh/id_rsa 
+COPY SSHKey/ssh_config /root/.ssh/config
 
 #工作路径
 WORKDIR /xiaolige/app/ops-ansible-api
