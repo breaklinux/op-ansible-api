@@ -1,0 +1,4 @@
+#comment
+#代表根目录（上下文环境目录中）中以abc开头的任意直接子目录或者直接子文件将被忽略
+#如/abc  abc.txt
+/Dockerfile*
