@@ -36,7 +36,7 @@ def ansibleRun():
         data = {"code": 1, "message": "instance_ip or command error"}
         if inenory_ip:
             t = HostApi()
-            Ansible_run = AnsibleApi(script_path + "/static_hosts", "ops", becomeUser)
+            Ansible_run = AnsibleApi(script_path + "/inventory_static_hosts", "ops", becomeUser)
             Ansible_run.run(inenory_ip, command, args)
             reults = Ansible_run.get_result()
             if command == "shell":
