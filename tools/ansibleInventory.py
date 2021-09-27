@@ -33,7 +33,7 @@ def getHostInventoryData(url):
     return json.dumps(data, indent=5)
 
 def HostApi():
-    getInventoryUrl = "https://op-apis.mumway.com/op-ansible-api/ansible/host/v1"
+    getInventoryUrl = "https://op-apis.breaklinux.com/op-ansible-api/ansible/host/v1"
     import json
     import configparser
     data = json.loads(getHostInventoryData(getInventoryUrl))
@@ -51,7 +51,7 @@ def HostApi():
 
 if __name__ == "__main__":
     from optparse import OptionParser
-    getInventoryUrl = "https://op-apis.mumway.com/op-ansible-api/ansible/host/v1"  ###获取动态主机接口###
+    getInventoryUrl = "https://op-apis.breaklinux.com/op-ansible-api/ansible/host/v1"  ###获取动态主机接口###
     parse = OptionParser()
     parse.add_option("-l", "--list", action="store_true", dest="list", default=False)
     (option, arges) = parse.parse_args()

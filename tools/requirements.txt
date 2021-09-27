@@ -1,8 +1,0 @@
-Flask==1.1.2
-Flask-SQLAlchemy==2.5.1
-requests==2.24.0
-ansible==2.7.5
-Jinja2==2.11.2
-PyMySQL==0.10.1
-paramiko==2.1.1
-PyYAML==3.10
