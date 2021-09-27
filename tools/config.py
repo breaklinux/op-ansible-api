@@ -10,8 +10,8 @@ class MysqlConfig(object):
     DIALECT = "mysql"
     DRIVER = "pymysql"
     USERNAME = "op_ansible_api_rw"
-    PASSWORD = "9yhhbfDBHcLW7S"
-    HOST = "rm-8vb2261p491u78y12.mysql.zhangbei.rds.aliyuncs.com"
+    PASSWORD = "1234567"
+    HOST = "192.168.1.12"
     PORT = "3306"
     DATABASE = "op-ansible-api"
     SQLALCHEMY_DATABASE_URI = "{}+{}://{}:{}@{}:{}/{}?charset=utf8".format(DIALECT, DRIVER, USERNAME, PASSWORD, HOST,
