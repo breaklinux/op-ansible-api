@@ -10,11 +10,7 @@ class MysqlConfig(object):
     DIALECT = "mysql"
     DRIVER = "pymysql"
     USERNAME = "op_ansible_api_rw"
-<<<<<<< HEAD
-    PASSWORD = "12345467"
-=======
     PASSWORD = "1234567"
->>>>>>> e81f31236eb90961fa3d69cbc769c3ad23976a4b
     HOST = "192.168.1.12"
     PORT = "3306"
     DATABASE = "op-ansible-api"
