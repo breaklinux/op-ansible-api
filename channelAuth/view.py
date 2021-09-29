@@ -180,10 +180,11 @@ def ansibleSelectChannelIpRun():
     import json
     from models import ipwhilt
     from tools.config import ChanneIpHeader, WhilteIpField
+    ip = request.args.get('ip', None)
     pagesize = request.args.get('page_size', 5, type=int)
     page = request.args.get('page', 1, type=int)
-    if "opsAdminForm" in request.args:
-        return Response(json.dumps({"code": 0, "data": WhilteIpField}), mimetype="application/json")
+    if ip:
+        return queryLike(ip)
     else:
         try:
             queryData = ipwhilt.query.all()
@@ -211,3 +212,36 @@ def anisbleDeleteChanneIp(IPID):
     except Exception as e:
         data = {"code": 500, "data": "删除授权IP失败", "message": str(e)}
     return {"code": 0, "data": data, "message": "success"}
+
+def queryLike(IP):
+    import json
+    from models import ipwhilt
+    try:
+        if IP:
+            Data = ipwhilt.query.filter(ipwhilt.ip.like("%" + IP + "%") if IP is not None else "").all()
+            return dataResult(Data)
+        else:
+            return Response(json.dumps({"code": 1, "data": "输入条件有问题,请检查"}), mimetype='application/json')
+    except Exception as e:
+        print(e)
+        parameterInfo = "查询数据库出现问题,请进行检查"
+        return Response(json.dumps({"code": 1, "data": parameterInfo}), mimetype='application/json')
+
+def dataResult(Data):
+    import json
+    from tools.config import ChanneIpHeader
+    """
+    1.统一返回字段
+    :param Data:
+    :return:
+    """
+    data_list = list()
+    if Data:
+        for i in Data:
+            dict_one = i.to_dict()
+            data_list.append(dict_one)
+        msg = "success"
+    else:
+        msg = "未查询到数据"
+    return Response(json.dumps({"code": 0, "total": len(data_list),"data":data_list,"msg":msg,"columns":ChanneIpHeader}),mimetype='application/json')
+
